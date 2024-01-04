@@ -28,7 +28,7 @@ iii. Random Forests
 iv. Ensembles of classifiers including bagging and boosting
 
 
-Experiment 6: Demonstrate the following Classification algorithms using some public
+Experiment 7: Demonstrate the following Classification algorithms using some public
 domain datasets in UCI ML repository and compute the accuracy of the classifier,
 considering few test datasets.
 i. k-Nearest neighbor classification

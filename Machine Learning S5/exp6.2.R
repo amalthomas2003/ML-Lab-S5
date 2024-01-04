@@ -1,4 +1,6 @@
-#Decision Tree Classification
+#Decision Tree Classification 
+
+#use titanic dataset provided in this repository to work properly
 
 library(rpart)
 library(rpart.plot)

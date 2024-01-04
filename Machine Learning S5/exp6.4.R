@@ -34,10 +34,12 @@ testing_data <- iris[-split_index, ]
 ans <- gbm(Species ~ ., data = training_data, distribution = "multinomial", n.trees = 100, interaction.depth = 3, shrinkage = 0.1)
 p <- predict(ans, newdata = testing_data, n.trees = 100, type = "response")
 
+
 class_predictions <- colnames(p)[apply(p, 1, which.max)]
+
 
 testing_data$Species <- as.factor(testing_data$Species)
 class_predictions <- as.factor(class_predictions)
-
+ 
 confusion_matrix <- confusionMatrix(class_predictions, testing_data$Species)
 confusion_matrix

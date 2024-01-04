@@ -30,7 +30,7 @@ predictions<-predict(naive_bayes_model,newdata=testing_data)
 #the predicted and training_data Class will be in different format
 #eg one might be list of  string and  other might be vector
 #to create confusion matrix (predicted class vs actual class)we need to make their type same
-#use as.factor() to make the predictions into same data type "factor"
+#use as.factor() to make the predictions and testing_data classes into same data type "factor"
 predictions<-as.factor(predictions)
 predictions #print predictions
 

@@ -10,8 +10,11 @@ split_index <- createDataPartition(iris$Species, p = 0.8, list = FALSE)
 training_data <- iris[split_index, ]
 testing_data <- iris[-split_index, ]
 
-# Train the bagged model
-bagged_model <- bagging(Species ~ ., data = training_data, nbagg = 50)
+#Train the bagged model
+#Alternatively use: bagged_model <- bagging(Species ~ ., data = training_data, nbagg = 50)
+#To set an integer giving the number of bootstrap replications.
+
+bagged_model <- bagging(Species ~ ., data = training_data)
 
 # Make predictions on the testing data
 predictions <- predict(bagged_model, newdata = testing_data)

@@ -1,6 +1,11 @@
 #Decision Tree Classification 
 
 #use titanic dataset provided in this repository to work properly
+#Or delete the non numberic data 
+#PassengerId	Survived	Pclass	Age	SibSp	Parch	Fare will be remaining.
+#Make sure not to delete Survived column
+
+
 
 library(rpart)
 library(rpart.plot)

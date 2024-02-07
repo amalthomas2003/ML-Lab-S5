@@ -1,0 +1,50 @@
+
+svm :
+library(e1071)
+library(caret)
+   	svm_model <- svm(Species ~ ., data = training_data, kernel = "radial")
+	predictions <- predict(svm_model, newdata = testing_data)
+
+random forest:
+library(caret)
+library(randomForest)
+	random_forest_model<-train(Class~.,data=training_data, method="rf")
+	predictions<-predict(random_forest_model,newdata=testing_data)
+
+
+decision tree:
+library(rpart)
+library(rpart.plot)
+	tree_model<-rpart(Survived~.,data=training_data,method="class") 
+	tree_model 
+	prp(tree_model) 
+	predictions<-predict(tree_model,newdata = testing_data,type="class")
+
+
+naive bayes: 
+library(e1071)
+library(caret)
+	naive_bayes_model<-naiveBayes(Class~.,data=training_data)
+	predictions<-predict(naive_bayes_model,newdata=testing_data)
+
+knn:
+library(caret)
+library(class)
+	classifier_knn <- knn(train = training_data[, -5], test = testing_data[, -5], cl = training_data$Species, k = 3)
+	misClassError <- mean(classifier_knn != testing_data$Species) 
+
+bagging:
+library(ipred)
+library(caret)
+	bagged_model <- bagging(Species ~ ., data = training_data)
+	predictions <- predict(bagged_model, newdata = testing_data)
+
+boosting:
+library(gbm)
+library(caret)
+	ans <- gbm(Species ~ ., data = training_data)
+	p <- predict(ans, newdata = testing_data)
+	class_predictions <- colnames(p)[apply(p, 1, which.max)]
+
+
+	
